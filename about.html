@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - GDG on Campus SSN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Product+Sans&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        /* Specific page styles */
+        .page-header {
+            padding-top: 120px;
+            padding-bottom: 60px;
+            text-align: center;
+            background: var(--bg-secondary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <a href="index.html" class="logo">GDG SSN</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <!-- I probably missed creating events.html in the copy command, checking user request. Wait, user didn't ask for events.html? "Home, Team, About, Blogs, and Contact". Ah, "It should be a horizontally scrollable card array of upcoming events" was for Home page in original request. New request: "Home, Team, About, Blogs, and Contact to be different pages". It didn't explicitly say "Events" should be its own page, but usually it is. I will check the implementation plan. Plan says: "Keep Hero, Events Carousel, and recent Blogs preview" in index.html. So Events stays on home? Or should it be separate? "Home, Team, About, Blogs, and Contact". Events fits in Home or stick to Plan. implementation_plan.md says: index.html keeps Events Carousel. So I won't make events.html for now unless needed. I'll link Events to index.html#events or just leave it. Let's assume Events is part of Home as per original plan modification description for index.html.  -->
+                <!-- Actually, standard subpages usually have an events page. But the user plan didn't specify it. I'll stick to the approved plan: index.html has "Events Carousel". So link "Events" to "index.html#events". -->
+                <li><a href="index.html#events">Events</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="about.html" class="active" style="color: var(--google-blue);">About</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Join Us</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="hero-title" style="font-size: 3rem;">About Us</h1>
+            <p class="hero-subtitle" style="margin-bottom: 0;">Building the future of technology, together.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container about-content">
+            <p class="about-text">
+                GDG on Campus SSN is a community-driven group for developers, designers, and tech enthusiasts at SSN
+                College of Engineering. We aim to bridge the gap between theory and practice by organizing workshops,
+                hackathons, and speaker sessions on the latest Google technologies.
+            </p>
+            <p class="about-text">
+                Our mission is to foster a collaborative environment where students can learn, share, and grow. Whether
+                you are interested in Android, Web Development, Cloud Computing, or AI/ML, there is a place for you
+                here.
+            </p>
+            <div style="margin-top: 40px;">
+                <h3 style="margin-bottom: 20px;">What We Do</h3>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: left;">
+                    <div style="padding: 20px; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                        <div style="font-size: 2rem; margin-bottom: 10px;">🛠️</div>
+                        <h4>Workshops</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Hands-on training sessions on widely
+                            used technologies.</p>
+                    </div>
+                    <div style="padding: 20px; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                        <div style="font-size: 2rem; margin-bottom: 10px;">🎤</div>
+                        <h4>Tech Talks</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Sessions by industry experts and
+                            alumni.</p>
+                    </div>
+                    <div style="padding: 20px; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                        <div style="font-size: 2rem; margin-bottom: 10px;">🚀</div>
+                        <h4>Hackathons</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Build solutions for real-world
+                            problems in competitive environments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: 40px 0; background: var(--text-primary); color: white; margin-top: auto;">
+        <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+            <div>
+                <h3 style="color: white; font-size: 1.2rem;">GDG SSN</h3>
+                <p style="color: #9aa0a6; font-size: 0.9rem;">Empowering developers at SSN College of Engineering.</p>
+            </div>
+            <div>
+                <p style="color: #9aa0a6; font-size: 0.9rem;">&copy; 2025 GDG on Campus SSN</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
