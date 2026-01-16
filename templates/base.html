@@ -5,6 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}GDG on Campus SSN{% endblock title %}</title>
+
+    {% if page %}
+    {% set meta_title = page.title %}
+    {% set meta_description = page.description | default(value=config.description) %}
+    {% set meta_image = page.extra.image | default(value="assets/images/social-share.png") %}
+    {% elif section %}
+    {% set meta_title = section.title %}
+    {% set meta_description = section.description | default(value=config.description) %}
+    {% set meta_image = section.extra.image | default(value="assets/images/social-share.png") %}
+    {% else %}
+    {% set meta_title = config.title %}
+    {% set meta_description = config.description %}
+    {% set meta_image = "assets/images/social-share.png" %}
+    {% endif %}
+
+    <meta name="description" content="{{ meta_description }}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ current_url | default(value=config.base_url) }}">
+    <meta property="og:title" content="{{ meta_title }}">
+    <meta property="og:description" content="{{ meta_description }}">
+    <meta property="og:image" content="{{ get_url(path=meta_image) }}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ current_url | default(value=config.base_url) }}">
+    <meta property="twitter:title" content="{{ meta_title }}">
+    <meta property="twitter:description" content="{{ meta_description }}">
+    <meta property="twitter:image" content="{{ get_url(path=meta_image) }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Product+Sans&family=Roboto:wght@300;400;500;700&display=swap"
@@ -49,13 +79,15 @@
 
     <!-- Footer -->
     <footer style="padding: 40px 0; background: #202124; color: white; margin-top: auto;">
-        <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+        <div class="container"
+            style="display: flex; justify-content: space-between; align-items: bottom; flex-wrap: wrap; gap: 20px;">
             <div>
-                <h3 style="color: white; font-size: 1.2rem;">GDG SSN</h3>
+                <h3 style="color: white; font-size: 1.2rem;">Google Developers Group SSN</h3>
                 <p style="color: #9aa0a6; font-size: 0.9rem;">Empowering developers at SSN College of Engineering.</p>
             </div>
             <div>
-                <p style="color: #9aa0a6; font-size: 0.9rem;">&copy; {{ now() | date(format="%Y") }} GDG on Campus SSN
+                <p style="color: #9aa0a6; font-size: 0.9rem;">&copy; {{ now() | date(format="%Y") }}
+                    GDG on Campus SSN
                 </p>
             </div>
         </div>
