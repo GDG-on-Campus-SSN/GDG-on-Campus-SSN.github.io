@@ -509,3 +509,195 @@ a {
     line-height: 1.8;
     margin-bottom: var(--spacing-lg);
 }
+
+/* Hero Redesign */
+.hero-section {
+    /* Override existing background */
+    background-color: var(--bg-primary);
+    background-image: 
+        radial-gradient(circle at center, rgba(32, 33, 36, 0.05) 0%, transparent 60%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+    background-repeat: no-repeat, repeat;
+    background-size: cover, auto;
+    background-position: center;
+}
+
+@media (prefers-color-scheme: dark) {
+    .hero-section {
+        background-image: 
+            radial-gradient(circle at center, rgba(232, 234, 237, 0.05) 0%, transparent 60%),
+            url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+    }
+}
+
+.hero-graphic-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xxl);
+    position: relative;
+}
+
+.hero-text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.hero-main-text {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -2px;
+    display: flex;
+    gap: 15px;
+}
+
+.hero-subtitle {
+    margin-top: var(--spacing-md);
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+/* Bracket Groups */
+.bracket-group {
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* Determine size of the 'space' for brackets */
+    width: 6rem; 
+    height: 8rem;
+    justify-content: center;
+}
+
+.bracket {
+    font-family: var(--font-family-display);
+    font-size: 10rem;
+    font-weight: 300;
+    line-height: 0;
+    position: absolute;
+    user-select: none;
+}
+
+.bracket.main {
+    z-index: 10;
+    opacity: 1;
+}
+
+.bracket.clone-1 {
+    color: var(--text-secondary);
+    opacity: 0.15;
+    z-index: 5;
+    /* Create outline effect text-stroke not fully supported, using color for now or standard text */
+    -webkit-text-stroke: 1px var(--text-secondary);
+    color: transparent;
+}
+
+.bracket.clone-2 {
+    color: var(--text-secondary);
+    opacity: 0.05;
+    z-index: 1;
+    -webkit-text-stroke: 1px var(--text-secondary);
+    color: transparent;
+}
+
+/* Positioning clones */
+.bracket-group.left .bracket.clone-1 { transform: translateX(-20px) scale(1.1); }
+.bracket-group.left .bracket.clone-2 { transform: translateX(-40px) scale(1.2); }
+.bracket-group.right .bracket.clone-1 { transform: translateX(20px) scale(1.1); }
+.bracket-group.right .bracket.clone-2 { transform: translateX(40px) scale(1.2); }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero-graphic-container {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .bracket-group {
+        width: 100%;
+        height: 4rem;
+        margin: 10px 0;
+    }
+    
+    .bracket {
+        font-size: 6rem;
+    }
+    
+    /* Rotate brackets for vertical stack? Use standard horizontal flow but smaller? */
+    /* Request says "engulf that text" - likely means surround horizontally. */
+    /* On mobile, let's keep horizontal but scale down */
+    .hero-graphic-container {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .hero-main-text {
+        font-size: 2.5rem;
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+    }
+
+    .bracket-group {
+        width: 3rem; 
+    }
+    
+    .bracket {
+        font-size: 6rem;
+    }
+    
+    .bracket-group.left .bracket.clone-1 { transform: translateX(-10px); }
+    .bracket-group.left .bracket.clone-2 { transform: translateX(-20px); }
+    .bracket-group.right .bracket.clone-1 { transform: translateX(10px); }
+    .bracket-group.right .bracket.clone-2 { transform: translateX(20px); }
+}
+
+/* Updated SVG Bracket Styles */
+.bracket {
+    width: 6rem;
+    height: 12rem; /* Larger */
+    font-size: initial; /* Reset font size for SVG */
+    font-weight: initial;
+    line-height: initial;
+}
+
+/* Adjust stroke for clones */
+.bracket.clone-1 {
+    opacity: 0.2;
+    stroke: var(--text-secondary);
+    color: var(--text-secondary); 
+    /* Remove text-stroke as it's SVG stroke now */
+    -webkit-text-stroke: initial;
+    color: initial;
+}
+
+.bracket.clone-2 {
+    opacity: 0.1;
+    stroke: var(--text-secondary);
+    /* Remove text-stroke */
+    -webkit-text-stroke: initial;
+    color: initial;
+}
+
+/* Updated Hero Background for Light Mode Visibility */
+.hero-section {
+    /* Only change the generic one to be more visible in light mode */
+    /* Darker grey overlay for light mode noise */
+    background-image: 
+        radial-gradient(circle at center, rgba(0, 0, 0, 0.08) 0%, transparent 60%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+}
+
+/* Keep Dark Mode subtle */
+@media (prefers-color-scheme: dark) {
+    .hero-section {
+        background-image: 
+            radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 60%),
+            url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+    }
+}
