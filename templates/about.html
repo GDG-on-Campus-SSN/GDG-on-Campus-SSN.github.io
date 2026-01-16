@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}About - GDG on Campus SSN{% endblock title %}
+{% block content %}
+<header class="page-header">
+    <div class="container">
+        <h1 class="hero-title" style="font-size: 3rem;">{{ page.title }}</h1>
+        <p class="hero-subtitle" style="margin-bottom: 0;">{{ page.description }}</p>
+    </div>
+</header>
+
+<section class="section">
+    <div class="container about-content">
+        {{ page.content | safe }}
+
+        <div style="margin-top: 40px;">
+            <h3 style="margin-bottom: 20px;">What We Do</h3>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: left;">
+                <div style="padding: 20px; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">🛠️</div>
+                    <h4>Workshops</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Hands-on training sessions on widely
+                        used technologies.</p>
+                </div>
+                <div style="padding: 20px; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">🎤</div>
+                    <h4>Tech Talks</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Sessions by industry experts and
+                        alumni.</p>
+                </div>
+                <div style="padding: 20px; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">🚀</div>
+                    <h4>Hackathons</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Build solutions for real-world
+                        problems in competitive environments.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

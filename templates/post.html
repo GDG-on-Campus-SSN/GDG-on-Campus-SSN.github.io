@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }} - GDG on Campus SSN{% endblock title %}
+{% block content %}
+<header class="page-header">
+    <div class="container">
+        <h1 class="hero-title" style="font-size: 2.5rem;">{{ page.title }}</h1>
+        <div class="blog-meta">
+            <span>By {{ page.extra.author | default(value="GDG Team") }}</span> • <span>{{ page.date | date(format="%B
+                %d, %Y") }}</span> • <span>{{ page.reading_time }} min read</span>
+        </div>
+    </div>
+</header>
+
+<section class="section">
+    <div class="container blog-post-content">
+        {{ page.content | safe }}
+
+        <div style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border-color);">
+            <a href="{{ get_url(path='@/blog/_index.md') }}" style="color: var(--google-blue); font-weight: 500;">&larr;
+                Back to all blogs</a>
+        </div>
+    </div>
+</section>
+{% endblock content %}

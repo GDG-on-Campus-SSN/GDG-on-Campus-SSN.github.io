@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Blogs - GDG on Campus SSN{% endblock title %}
+{% block content %}
+<header class="page-header">
+    <div class="container">
+        <h1 class="hero-title" style="font-size: 3rem;">{{ section.title }}</h1>
+        <p class="hero-subtitle" style="margin-bottom: 0;">{{ section.description }}</p>
+    </div>
+</header>
+
+<section class="section">
+    <div class="container">
+        <div class="blogs-grid">
+            {% for page in section.pages %}
+            <article class="blog-card">
+                <div class="blog-content">
+                    <p class="blog-date">{{ page.date | date(format="%B %d, %Y") }}</p>
+                    <h3 class="blog-title"><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
+                    <p class="blog-excerpt">{{ page.description | default(value=page.content | striptags |
+                        truncate(length=150)) }}</p>
+                </div>
+            </article>
+            {% else %}
+            <p>No posts yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block title %}GDG on Campus SSN{% endblock title %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section id="home" class="hero-section flex-center">
+    <div class="hero-content animate-fade-in">
+        <div class="gdg-logo-container">
+            <svg width="120" height="60" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                <path d="M40 100 L100 40 L120 60 L80 100 L120 140 L100 160 L40 100" fill="#4285F4" />
+                <path d="M140 110 L180 110 L180 90 L160 90 L160 70 L240 70 L240 130 L160 130 L160 110" fill="#EA4335" />
+                <path d="M360 100 L300 40 L280 60 L320 100 L280 140 L300 160 L360 100" fill="#34A853" />
+            </svg>
+            <div class="gdg-icon-text">
+                <span style="color: var(--google-blue)">&lt;</span>
+                <span style="color: var(--google-red)">GDG</span>
+                <span style="color: var(--google-green)">&gt;</span>
+            </div>
+        </div>
+
+        <h1 class="hero-title animate-slide-up delay-100">GDG on Campus SSN</h1>
+        <p class="hero-subtitle animate-slide-up delay-200">Google Developer Groups of SSN College of Engineering
+        </p>
+
+        <div class="hero-actions animate-slide-up delay-300">
+            <a href="#events" class="btn btn-primary">See Events</a>
+            <a href="https://gdg.community.dev" target="_blank" class="btn btn-outline">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<!-- Events Section -->
+<section id="events" class="section">
+    <div class="container">
+        <h2 class="section-title">Upcoming Events</h2>
+        <div class="events-scroll-container">
+            <!-- Event Card 1 -->
+            <article class="event-card">
+                <div class="event-image">
+                    🖥️
+                </div>
+                <div class="event-details">
+                    <span class="event-date">Oct 15, 2025</span>
+                    <h3 class="event-title">Google Cloud Study Jam</h3>
+                    <p class="event-desc">Kickstart your cloud journey with hands-on labs and expert guidance on
+                        Google Cloud Platform.</p>
+                    <a href="#" class="event-link">Register Now &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Event Card 2 -->
+            <article class="event-card">
+                <div class="event-image">
+                    🤖
+                </div>
+                <div class="event-details">
+                    <span class="event-date">Nov 02, 2025</span>
+                    <h3 class="event-title">DevFest SSN 2025</h3>
+                    <p class="event-desc">Our biggest annual developer conference featuring tech talks, workshops,
+                        and networking.</p>
+                    <a href="#" class="event-link">Learn More &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Event Card 3 -->
+            <article class="event-card">
+                <div class="event-image">
+                    📱
+                </div>
+                <div class="event-details">
+                    <span class="event-date">Nov 20, 2025</span>
+                    <h3 class="event-title">Android Compose Camp</h3>
+                    <p class="event-desc">Learn how to build better Android apps faster with Jetpack Compose.</p>
+                    <a href="#" class="event-link">View Details &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Event Card 4 -->
+            <article class="event-card">
+                <div class="event-image">
+                    ⚡
+                </div>
+                <div class="event-details">
+                    <span class="event-date">Dec 10, 2025</span>
+                    <h3 class="event-title">Web Performance Workshop</h3>
+                    <p class="event-desc">Optimizing your web apps for speed and accessibility with Chrome DevTools.
+                    </p>
+                    <a href="#" class="event-link">Register Now &rarr;</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Blogs Preview Section -->
+<section class="section" style="background-color: var(--bg-secondary);">
+    <div class="container">
+        <h2 class="section-title">Latest & Greatest</h2>
+        <div class="blogs-grid">
+            {% set blog_section = get_section(path="blog/_index.md") %}
+            {% for page in blog_section.pages | slice(end=2) %}
+            <article class="blog-card">
+                <div class="blog-content">
+                    <p class="blog-date">{{ page.date | date(format="%B %d, %Y") }}</p>
+                    <h3 class="blog-title"><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
+                    <p class="blog-excerpt">{{ page.description | default(value=page.content | striptags |
+                        truncate(length=150)) }}</p>
+                </div>
+            </article>
+            {% else %}
+            <!-- Fallback content if no blogs exist yet, matching original design -->
+            <article class="blog-card">
+                <div class="blog-content">
+                    <p class="blog-date">September 28, 2025</p>
+                    <h3 class="blog-title"><a href="#">Recap: Solution Challenge Info Session</a></h3>
+                    <p class="blog-excerpt">We hosted an amazing session introducing the 2025 Google Solution
+                        Challenge. Here are the key takeaways from the event and how you can participate.</p>
+                </div>
+            </article>
+            <article class="blog-card">
+                <div class="blog-content">
+                    <p class="blog-date">September 15, 2025</p>
+                    <h3 class="blog-title"><a href="#">Introducing the New Core Team</a></h3>
+                    <p class="blog-excerpt">Meet the passionate individuals who will be leading GDG SSN for the
+                        upcoming academic year. Get to know their roles and vision.</p>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        <div class="flex-center" style="margin-top: 30px;">
+            <a href="{{ get_url(path='@/blog/_index.md') }}" class="btn btn-outline">Read More Blogs</a>
+        </div>
+    </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Team - GDG on Campus SSN{% endblock title %}
+{% block content %}
+<header class="page-header">
+    <div class="container">
+        <h1 class="hero-title" style="font-size: 3rem;">{{ page.title }}</h1>
+        <p class="hero-subtitle" style="margin-bottom: 0;">{{ page.description }}</p>
+    </div>
+</header>
+
+<section class="section">
+    <div class="container">
+
+        <div class="team-grid">
+            <!-- Member 1 -->
+            <div class="team-member">
+                <div class="member-avatar">👩‍💻</div>
+                <h3 class="member-name">Jane Doe</h3>
+                <p class="member-role">Lead Organizer</p>
+            </div>
+            <!-- Member 2 -->
+            <div class="team-member">
+                <div class="member-avatar">👨‍💻</div>
+                <h3 class="member-name">John Smith</h3>
+                <p class="member-role">Tech Lead</p>
+            </div>
+            <!-- Member 3 -->
+            <div class="team-member">
+                <div class="member-avatar">🎨</div>
+                <h3 class="member-name">Alice Johnson</h3>
+                <p class="member-role">Design Lead</p>
+            </div>
+            <!-- Member 4 -->
+            <div class="team-member">
+                <div class="member-avatar">📈</div>
+                <h3 class="member-name">Bob Brown</h3>
+                <p class="member-role">Marketing Lead</p>
+            </div>
+            <!-- Member 5 -->
+            <div class="team-member">
+                <div class="member-avatar">⚡</div>
+                <h3 class="member-name">Charlie Davis</h3>
+                <p class="member-role">Event Organizer</p>
+            </div>
+            <!-- Member 6 -->
+            <div class="team-member">
+                <div class="member-avatar">📝</div>
+                <h3 class="member-name">Dana White</h3>
+                <p class="member-role">Content Lead</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Contact - GDG on Campus SSN{% endblock title %}
+{% block content %}
+<!-- Active page logic for contact is handled by Join Us button which is different, but for consistency I can add it, though there is no "Contact" link in nav, only "Join Us". "Join Us" href points here. -->
+<!-- Check base.html logic: href="{{ get_url(path='@/contact.md') }}" class="btn btn-primary". no active class logic for button. -->
+
+<header class="page-header">
+    <div class="container">
+        <h1 class="hero-title" style="font-size: 3rem;">{{ page.title }}</h1>
+        <p class="hero-subtitle" style="margin-bottom: 0;">{{ page.description }}</p>
+    </div>
+</header>
+
+<section class="section">
+    <div class="container">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Connect with Us</h3>
+                <p style="margin-bottom: 20px; color: var(--text-secondary);">Reach out to us for collaborations,
+                    sponsorships, or just to say hi! We are always looking for enthusiastic speakers and partners.
+                </p>
+                <div style="margin-bottom: 30px;">
+                    <p style="margin-bottom: 8px;"><strong>Email:</strong> <a href="mailto:gdg@ssn.edu.in"
+                            style="color: var(--google-blue);">gdg@ssn.edu.in</a></p>
+                    <p><strong>Location:</strong> SSN College of Engineering, Rajiv Gandhi Salai (OMR), Kalavakkam –
+                        603 110, Tamil Nadu, India</p>
+                </div>
+                <div>
+                    <h4>Follow Us</h4>
+                    <div style="display: flex; gap: 15px; margin-top: 10px; font-size: 1.5rem;">
+                        <a href="#" style="color: #0077b5;">🔗</a> <!-- LinkedIn -->
+                        <a href="#" style="color: #333;">📷</a> <!-- Instagram -->
+                        <a href="#" style="color: #1da1f2;">🐦</a> <!-- Twitter -->
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name" style="display: block; margin-bottom: 5px; font-weight: 500;">Name</label>
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" style="display: block; margin-bottom: 5px; font-weight: 500;">Email</label>
+                    <input type="email" id="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message" style="display: block; margin-bottom: 5px; font-weight: 500;">Message</label>
+                    <textarea id="message" rows="5" placeholder="How can we help you?" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock content %}
