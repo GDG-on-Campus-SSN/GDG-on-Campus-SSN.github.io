@@ -4,8 +4,5 @@ description = "Google Developer Groups of SSN College of Engineering. Join us to
 compile_sass = false
 build_search_index = false
 
-[markdown]
-highlight_code = true
-
 [extra]
 author = "GDG SSN"

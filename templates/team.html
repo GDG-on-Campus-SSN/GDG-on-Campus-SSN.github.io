@@ -8,47 +8,31 @@
     </div>
 </header>
 
-<section class="section">
-    <div class="container">
-
-        <div class="team-grid">
-            <!-- Member 1 -->
+<div class="container" style="padding-bottom: 60px;">
+    {% if page.extra.team_sections %}
+    {% for section in page.extra.team_sections %}
+    <section class="section team-section" style="padding: 40px 0;">
+        <h2 class="section-title team-category-title">{{ section.title }}</h2>
+        <div class="team-grid" {% if section.title=="Office Bearers"
+            %}style="display: flex; justify-content: center; flex-wrap: wrap;" {% endif %}>
+            {% for member in section.members %}
             <div class="team-member">
-                <div class="member-avatar">👩‍💻</div>
-                <h3 class="member-name">Jane Doe</h3>
-                <p class="member-role">Lead Organizer</p>
+                <div class="member-avatar">
+                    {{ member.name | regex_replace(pattern="(?P<first>.).*", rep="$first") }}
+                </div>
+                <h3 class="member-name">{{ member.name }}</h3>
+                <p class="member-role">{{ member.position }}</p>
+                <div class="member-details">
+                    <span class="member-dept">{{ member.dept }}</span>
+                    {% if member.year %}
+                    <span class="member-year">Year {{ member.year }}</span>
+                    {% endif %}
+                </div>
             </div>
-            <!-- Member 2 -->
-            <div class="team-member">
-                <div class="member-avatar">👨‍💻</div>
-                <h3 class="member-name">John Smith</h3>
-                <p class="member-role">Tech Lead</p>
-            </div>
-            <!-- Member 3 -->
-            <div class="team-member">
-                <div class="member-avatar">🎨</div>
-                <h3 class="member-name">Alice Johnson</h3>
-                <p class="member-role">Design Lead</p>
-            </div>
-            <!-- Member 4 -->
-            <div class="team-member">
-                <div class="member-avatar">📈</div>
-                <h3 class="member-name">Bob Brown</h3>
-                <p class="member-role">Marketing Lead</p>
-            </div>
-            <!-- Member 5 -->
-            <div class="team-member">
-                <div class="member-avatar">⚡</div>
-                <h3 class="member-name">Charlie Davis</h3>
-                <p class="member-role">Event Organizer</p>
-            </div>
-            <!-- Member 6 -->
-            <div class="team-member">
-                <div class="member-avatar">📝</div>
-                <h3 class="member-name">Dana White</h3>
-                <p class="member-role">Content Lead</p>
-            </div>
+            {% endfor %}
         </div>
-    </div>
-</section>
+    </section>
+    {% endfor %}
+    {% endif %}
+</div>
 {% endblock content %}

@@ -124,26 +124,28 @@ a {
 }
 
 .logo {
-  font-family: var(--font-family-display);
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: #202124 !important; /* Force dark color */
-  display: flex;
-  align-items: center;
+    font-family: var(--font-family-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #202124 !important;
+    /* Force dark color */
+    display: flex;
+    align-items: center;
 }
 
 .nav-links {
-  display: flex;
-  gap: var(--spacing-lg);
-  list-style: none;
-  align-items: center;
+    display: flex;
+    gap: var(--spacing-lg);
+    list-style: none;
+    align-items: center;
 }
 
 .nav-links a {
-  font-weight: 500;
-  color: #5f6368; /* Always dark gray */
-  transition: color 0.2s;
-  font-size: 0.95rem;
+    font-weight: 500;
+    color: #5f6368;
+    /* Always dark gray */
+    transition: color 0.2s;
+    font-size: 0.95rem;
 }
 
 .nav-links a:hover {
@@ -372,70 +374,130 @@ a {
         font-size: 3rem;
     }
 }
+
 /* About Section */
 .about-content {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .about-text {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: var(--spacing-lg);
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
 }
 
 /* Team Section */
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 40px;
-  text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
 }
 
 .team-member {
-  transition: transform 0.3s;
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: 30px 20px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 360px;
+    /* Consistent width for all cards */
+    width: 100%;
+    margin: 0 auto;
+    /* Center in container/grid cell */
 }
 
 .team-member:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--google-blue);
 }
 
 .member-avatar {
-  width: 120px;
-  height: 120px;
-  background-color: var(--bg-secondary);
-  border-radius: 50%;
-  margin: 0 auto var(--spacing-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  color: var(--text-secondary);
-  border: 4px solid white;
-  box-shadow: var(--shadow-sm);
+    width: 100px;
+    height: 100px;
+    background-color: var(--bg-secondary);
+    border-radius: 50%;
+    margin: 0 auto var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--google-blue);
+    font-weight: bold;
+    font-family: var(--font-family-display);
+    position: relative;
+    z-index: 1;
+}
+
+.member-avatar::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 50%;
+    border: 2px dashed rgba(66, 133, 244, 0.2);
+    /* Subtle ring */
+    z-index: -1;
 }
 
 .member-name {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 4px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text-primary);
 }
 
 .member-role {
-  color: var(--google-blue);
-  font-size: 0.9rem;
-  font-weight: 500;
+    color: var(--google-blue);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.member-details {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: auto;
+    /* Push to bottom if content varies */
+}
+
+.member-dept,
+.member-year {
+    font-size: 0.8rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.team-member:hover .member-dept,
+.team-member:hover .member-year {
+    background: rgba(66, 133, 244, 0.1);
+    color: var(--google-blue);
 }
 
 /* Contact Section */
 .contact-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-xl);
-  max-width: 900px;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .contact-info {
@@ -443,31 +505,31 @@ a {
 }
 
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
 }
 
 .form-group input,
 .form-group textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  font-family: inherit;
-  transition: border-color 0.2s;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    transition: border-color 0.2s;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  outline: none;
-  border-color: var(--google-blue);
+    outline: none;
+    border-color: var(--google-blue);
 }
 
 @media (max-width: 768px) {
-  .contact-container {
-    grid-template-columns: 1fr;
-  }
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Common Page Header */
@@ -514,7 +576,7 @@ a {
 .hero-section {
     /* Override existing background */
     background-color: var(--bg-primary);
-    background-image: 
+    background-image:
         radial-gradient(circle at center, rgba(32, 33, 36, 0.05) 0%, transparent 60%),
         url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
     background-repeat: no-repeat, repeat;
@@ -524,7 +586,7 @@ a {
 
 @media (prefers-color-scheme: dark) {
     .hero-section {
-        background-image: 
+        background-image:
             radial-gradient(circle at center, rgba(232, 234, 237, 0.05) 0%, transparent 60%),
             url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
     }
@@ -568,7 +630,7 @@ a {
     align-items: center;
     position: relative;
     /* Determine size of the 'space' for brackets */
-    width: 6rem; 
+    width: 6rem;
     height: 8rem;
     justify-content: center;
 }
@@ -605,10 +667,21 @@ a {
 }
 
 /* Positioning clones */
-.bracket-group.left .bracket.clone-1 { transform: translateX(-20px) scale(1.1); }
-.bracket-group.left .bracket.clone-2 { transform: translateX(-40px) scale(1.2); }
-.bracket-group.right .bracket.clone-1 { transform: translateX(20px) scale(1.1); }
-.bracket-group.right .bracket.clone-2 { transform: translateX(40px) scale(1.2); }
+.bracket-group.left .bracket.clone-1 {
+    transform: translateX(-20px) scale(1.1);
+}
+
+.bracket-group.left .bracket.clone-2 {
+    transform: translateX(-40px) scale(1.2);
+}
+
+.bracket-group.right .bracket.clone-1 {
+    transform: translateX(20px) scale(1.1);
+}
+
+.bracket-group.right .bracket.clone-2 {
+    transform: translateX(40px) scale(1.2);
+}
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
@@ -616,17 +689,17 @@ a {
         flex-direction: column;
         gap: var(--spacing-sm);
     }
-    
+
     .bracket-group {
         width: 100%;
         height: 4rem;
         margin: 10px 0;
     }
-    
+
     .bracket {
         font-size: 6rem;
     }
-    
+
     /* Rotate brackets for vertical stack? Use standard horizontal flow but smaller? */
     /* Request says "engulf that text" - likely means surround horizontally. */
     /* On mobile, let's keep horizontal but scale down */
@@ -644,24 +717,37 @@ a {
     }
 
     .bracket-group {
-        width: 3rem; 
+        width: 3rem;
     }
-    
+
     .bracket {
         font-size: 6rem;
     }
-    
-    .bracket-group.left .bracket.clone-1 { transform: translateX(-10px); }
-    .bracket-group.left .bracket.clone-2 { transform: translateX(-20px); }
-    .bracket-group.right .bracket.clone-1 { transform: translateX(10px); }
-    .bracket-group.right .bracket.clone-2 { transform: translateX(20px); }
+
+    .bracket-group.left .bracket.clone-1 {
+        transform: translateX(-10px);
+    }
+
+    .bracket-group.left .bracket.clone-2 {
+        transform: translateX(-20px);
+    }
+
+    .bracket-group.right .bracket.clone-1 {
+        transform: translateX(10px);
+    }
+
+    .bracket-group.right .bracket.clone-2 {
+        transform: translateX(20px);
+    }
 }
 
 /* Updated SVG Bracket Styles */
 .bracket {
     width: 6rem;
-    height: 12rem; /* Larger */
-    font-size: initial; /* Reset font size for SVG */
+    height: 12rem;
+    /* Larger */
+    font-size: initial;
+    /* Reset font size for SVG */
     font-weight: initial;
     line-height: initial;
 }
@@ -670,7 +756,7 @@ a {
 .bracket.clone-1 {
     opacity: 0.2;
     stroke: var(--text-secondary);
-    color: var(--text-secondary); 
+    color: var(--text-secondary);
     /* Remove text-stroke as it's SVG stroke now */
     -webkit-text-stroke: initial;
     color: initial;
@@ -688,7 +774,7 @@ a {
 .hero-section {
     /* Only change the generic one to be more visible in light mode */
     /* Darker grey overlay for light mode noise */
-    background-image: 
+    background-image:
         radial-gradient(circle at center, rgba(0, 0, 0, 0.08) 0%, transparent 60%),
         url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
 }
@@ -696,7 +782,7 @@ a {
 /* Keep Dark Mode subtle */
 @media (prefers-color-scheme: dark) {
     .hero-section {
-        background-image: 
+        background-image:
             radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 60%),
             url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
     }

@@ -3,7 +3,7 @@ title = "The Future of AI on Mobile"
 date = 2025-10-12
 description = "Artificial Intelligence is rapidly evolving, and its integration into mobile devices is transforming how we interact with technology."
 [extra]
-author = "Jane Doe"
+author = "Varghese K James"
 +++
 
 Artificial Intelligence is rapidly evolving, and its integration into mobile devices is transforming how we interact with technology. From on-device machine learning to generative AI models running locally, the possibilities are endless.
