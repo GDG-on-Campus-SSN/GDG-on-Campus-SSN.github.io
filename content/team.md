@@ -11,6 +11,20 @@ members = [
 ]
 
 [[extra.team_sections]]
+title = "App & Web Development"
+members = [
+    { name = "Akshayalakshmi S", dept = "IT", year = "III", position = "Head" },
+    { name = "Rahul VS", dept = "CSE", year = "III", position = "Sub Head" },
+    { name = "Uthaya Murthy", dept = "CSE", year = "II", position = "Sub Head" },
+    { name = "Varghese K James", dept = "CSE", year = "II", position = "Core Committee" },
+    { name = "Pranav Vijay", dept = "CSE", year = "II", position = "Core Committee" },
+    { name = "Haswanthkumar T S", dept = "MTECH CSE", year = "I", position = "Core Committee" },
+    { name = "Anjali Mani AK", dept = "CSE", year = "III", position = "Core Committee" },
+    { name = "Yukesh D", dept = "CSE", year = "III", position = "Core Committee" }
+]
+
+
+[[extra.team_sections]]
 title = "Event Management"
 members = [
     { name = "Asmita Padmanabhan", dept = "IT", year = "III", position = "Head" },
@@ -22,19 +36,6 @@ members = [
     { name = "Yasasvini Tiwari", dept = "IT", year = "II", position = "Core Committee" },
     { name = "Rethanya P", dept = "CSE", year = "III", position = "Core Committee" },
     { name = "Meghana Kumar", dept = "IT", year = "III", position = "Core Committee" }
-]
-
-[[extra.team_sections]]
-title = "App & Web Development"
-members = [
-    { name = "Akshayalakshmi S", dept = "IT", year = "III", position = "Head" },
-    { name = "Rahul VS", dept = "CSE", year = "III", position = "Sub Head" },
-    { name = "Uthaya Murthy", dept = "CSE", year = "II", position = "Sub Head" },
-    { name = "Haswanthkumar T S", dept = "MTECH CSE", year = "I", position = "Core Committee" },
-    { name = "Anjali Mani AK", dept = "CSE", year = "III", position = "Core Committee" },
-    { name = "Yukesh D", dept = "CSE", year = "III", position = "Core Committee" },
-    { name = "Varghese K James", dept = "CSE", year = "II", position = "Core Committee" },
-    { name = "Pranav Vijay", dept = "CSE", year = "II", position = "Core Committee" }
 ]
 
 [[extra.team_sections]]
