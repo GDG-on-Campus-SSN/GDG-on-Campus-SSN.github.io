@@ -17,5 +17,3 @@ zola build
 Checkout the zola docs for more info.
 
 For publishing, use the Zola [github action](https://www.getzola.org/documentation/deployment/github-pages/), to put it on github pages.
-
-Content here is Published under CC BY NC 3.0
