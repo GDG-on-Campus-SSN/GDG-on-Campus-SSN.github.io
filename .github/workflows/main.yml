@@ -1,4 +1,4 @@
-name: Build and deploy Zola website
+name: Build and deploy Zola website og way
 on:
   push:
     branches:
