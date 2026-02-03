@@ -1,4 +1,4 @@
-base_url = "https://gdg-ssn.netlify.app" # Placeholder URL
+base_url = "https://gdg-on-campus-ssn.github.io/" # Placeholder URL
 title = "GDG on Campus SSN"
 description = "Google Developer Groups of SSN College of Engineering. Join us to learn, connect, and grow."
 compile_sass = false
