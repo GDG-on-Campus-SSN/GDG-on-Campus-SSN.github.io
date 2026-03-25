@@ -251,6 +251,16 @@ a {
     justify-content: center;
     color: var(--text-secondary);
     font-size: 3rem;
+    overflow: hidden;
+    /* Prevent image from spilling out */
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Fill the 160px height while maintaining aspect ratio */
+    display: block;
 }
 
 .event-details {
