@@ -1,7 +1,7 @@
 +++
 title = "A Student’s Guide to Mastering the Model Context Protocol"
 date = 2025-03-11
-description = "Workflow is shifting. We are entering the era of **Agentic Development**, where AI isn’t just a chatbot. It’s a collaborator with “hands”."
+description = "Workflow is shifting. We are entering the era of Agentic Development, where AI isn’t just a chatbot. It’s a collaborator with “hands”."
 [extra]
 author = "Pranav V"
 +++
