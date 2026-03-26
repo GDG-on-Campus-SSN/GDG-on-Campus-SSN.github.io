@@ -19,15 +19,14 @@ nearly an afterthought. This issue is known as the **Memory Wall**, and
 it explains why AI inference is expensive, consumes a lot of power, and
 is slower than the hardware could be.
 
-Taalas, a Canadian startup founded in 2023 by former AMD GPU archi-
-tect Ljubisa Bajic, suggested a solution so radical it sounds like a joke:
+Taalas, a Canadian startup founded in 2023 by former AMD GPU architect Ljubisa Bajic, suggested a solution so radical it sounds like a joke:
 get rid of the memory entirely.
 
 ![The Taalas HC1 PCIe card — 53 billion transistors, 815mm², one
 model etched directly into silicon.](talas1.png)
 
 # The Von Neumann Problem
-Every computing device made in the last 70 years relies on Von Neu-
+Every computing device made in the last 70 years relies on Von Neu
 mann architecture. Memory and processing power are separate. Data
 travels between them. This movement creates a bottleneck.
  
@@ -49,8 +48,8 @@ flows straight through hardwired weights. No round trip. No bus. No wait.](talas
 # The Mask ROM Recall Fabric
 
 In standard ROM, a memory cell consists of a single transistor. It is
-either connected to ground, representing 0, or disconnected, represent-
-ing 1. This state is set permanently during fabrication. The memory is
+either connected to ground, representing 0, or disconnected, representing 1.
+This state is set permanently during fabrication. The memory is
 infinitely readable and never writable. It is the densest and fastest type
 of memory in digital electronics.
 
@@ -83,8 +82,8 @@ the chip’s dataflow. For each of Llama 3.1 8B’s 32 transformer layers,
 the attention mechanism and feed-forward network compute directly
 through the hardwired recall fabric. The weight matrices for Query, Key,
 and Value projections are physically etched into the transistors. The
-multiply operation occurs as the signal flows through. There is no fetch-
-ing or bus transfer. The result is available immediately.
+multiply operation occurs as the signal flows through. There is no fetching
+ or bus transfer. The result is available immediately.
 
 The KV cache and LoRA fine-tuning adapters reside in a separate SRAM
 fabric on the same die. This is the only dynamic part of the architecture.
@@ -123,28 +122,28 @@ be modified sounds insane.
 
 However, the answer provided by Taalas is genius. The layout of the
 transistor array is common across all HC1 models — the only thing that
-differs are the top two layers of metal. Taalas uses these layers to iden-
-tify which of the transistors are at ground level, thereby indicating the
-actual weight of the transistors. Taalas is able to take silicon and pro-
-vide the PCIe card from a production run in about two months working
+differs are the top two layers of metal. Taalas uses these layers to identify
+ which of the transistors are at ground level, thereby indicating the
+actual weight of the transistors. Taalas is able to take silicon and provide
+ the PCIe card from a production run in about two months working
 with TSMC; this makes not only seasonal hardware refresh feasible, but
 enables rapid technology cycles.
 
 
 # Why This Matters
 The AI industry is shifting from being focused on training to being fo-
-cused on inference, where the cost per token becomes the most impor-
-tant measure at scale. In this scenario, the programmability burden of
+cused on inference, where the cost per token becomes the most important
+ measure at scale. In this scenario, the programmability burden of
 a general purpose GPU becomes a drawback.
 
 The HC1 is currently a prototype, not a product available for sale. The
-benchmarks are self-reported. The HC2, which targets frontier mod-
-els, is on the plan but is not yet functional. Fitting a 671B parameter
-model like DeepSeek R1 would require roughly 30 synchronized tape-
-outs, which is theoretically possible but operationally complex.
+benchmarks are self-reported. The HC2, which targets frontier models,
+ is on the plan but is not yet functional. Fitting a 671B parameter
+model like DeepSeek R1 would require roughly 30 synchronized tapeouts,
+ which is theoretically possible but operationally complex.
 However, the architectural insight holds true regardless of whether Taalas
-specifically succeeds. The memory wall is real. The energy cost of mov-
-ing data is real. Taalas explored the path of specialization more than
+specifically succeeds. The memory wall is real. The energy cost of moving
+ data is real. Taalas explored the path of specialization more than
 anyone else was willing to go.
 
 Whether this represents the future of inference or an intriguing dead end
