@@ -570,8 +570,8 @@ a {
 
 .blog-meta {
     color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-top: 10px;
+    font-size: 1.2rem;
+    margin-top: 1rem;
 }
 
 /* Target paragraphs in content pages to match about-text style */
