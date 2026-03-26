@@ -11,15 +11,16 @@ not the model or the algorithm. It’s the connection between memory
 and compute.
 
 Every time a GPU generates a token, it fetches billions of parameters
-from High Bandwidth Memory, moves them across a bus to the com-
-pute cores, performs the calculations, and sends the results back. This
+from High Bandwidth Memory, moves them across a bus to the compute cores,
+ performs the calculations, and sends the results back. This
 process happens billions of times every second. The movement of data
 alone makes up **80 to 90% of energy use**. The actual computation is
 nearly an afterthought. This issue is known as the **Memory Wall**, and
 it explains why AI inference is expensive, consumes a lot of power, and
 is slower than the hardware could be.
 
-Taalas, a Canadian startup founded in 2023 by former AMD GPU architect Ljubisa Bajic, suggested a solution so radical it sounds like a joke:
+Taalas, a Canadian startup founded in 2023 by former AMD GPU architect Ljubisa Bajic,
+ suggested a solution so radical it sounds like a joke:
 get rid of the memory entirely.
 
 ![The Taalas HC1 PCIe card — 53 billion transistors, 815mm², one
@@ -63,12 +64,12 @@ weight and perform the related multiplication using just one transistor.
 >weight.
 
 In traditional designs, weight storage and computation are completely
-separate. You need separate transistors for the memory cell, the regis-
-ter, the ALU, and the connections between these components. Taalas
+separate. You need separate transistors for the memory cell, the register,
+ the ALU, and the connections between these components. Taalas
 merged all of this into a single physical structure. The signal does not
 fetch the weight and then compute. Instead, the computation occurs as
-the signal travels through the transistor that encodes the weight. Stor-
-age and computation become one physical event.
+the signal travels through the transistor that encodes the weight. Storage
+ and computation become one physical event.
 
 The HC1 has 53 billion transistors on an 815mm² die, manufactured
 using TSMC’s 6nm N6 process. Almost every transistor serves as both
