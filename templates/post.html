@@ -5,8 +5,7 @@
     <div class="container">
         <h1 class="hero-title" style="font-size: 2.5rem;">{{ page.title }}</h1>
         <div class="blog-meta">
-            <span>By {{ page.extra.author | default(value="GDG Team") }}</span> • <span>{{ page.date | date(format="%B
-                %d, %Y") }}</span> • <span>{{ page.reading_time }} min read</span>
+            <span>By {% if page.extra.author_link %}<a href="{{ page.extra.author_link }}" target="_blank" rel="noopener">{{ page.extra.author | default(value="GDG Team") }}</a>{% else %}{{ page.extra.author | default(value="GDG Team") }}{% endif %}</span> • <span>{{ page.date | date(format="%B %d, %Y") }}</span> • <span>{{ page.reading_time }} min read</span>
         </div>
     </div>
 </header>
