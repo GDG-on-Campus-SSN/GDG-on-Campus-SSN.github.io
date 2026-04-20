@@ -1,7 +1,7 @@
 +++
 title = "A Brief History of LLMs"
 date = 2026-04-20
-description = "Ever wondered how ChatGPT, Gemini and Claude as well as ton of Agentic AI Tools, as we know and use them today came into existence ? This post breaks down the history, architectural shifts and major milestones that shaped today's AI Tools."
+description = "Ever wondered how ChatGPT, Gemini, Claude and a ton of other agentic AI tools came into existence ? This post breaks down the history, architectural shifts and major milestones that shaped the AI landscape as we know it today."
 [extra]
 author = "R Uthaya Murthy"
 author_link = "https://uthayamurthy.com"
@@ -18,11 +18,7 @@ To fix this, researchers introduced Long Short-Term Memory networks (LSTMs). LST
 
 However, even with the improvements that LSTMs brought, the fundamental bottleneck still remained. Since they processed text sequentially, that is word by word, they were very slow to train. It wasn't possible to parallelize the work across multiple processors. This sequential nature meant there was a hard limit on how much data these models could learn from and how large they could scale. The field of NLP was stalled because of this architectural limitation and was waiting for something that could break this limitation.
 
-To fix this, researchers introduced Long Short-Term Memory networks (LSTMs). LSTMs added a system of internal gates that could regulate the flow of information, deciding which context to keep and which to throw away as it processed the text. This allowed the models to retain context over long stretches of text.
-
 ![Evolution of Language Models: From RNN to LSTM to Transformer architectures](rnn_lstm_transformer_infographic.png)
-
-However, even with the improvements that LSTMs brought, the fundamental bottleneck still remained. Since they processed text sequentially, that is word by word, they were very slow to train. It wasn't possible to parallelize the work across multiple processors. This sequential nature meant there was a hard limit on how much data these models could learn from and how large they could scale. The field of NLP was stalled because of this architectural limitation and was waiting for something that could break this limitation.
 
 # How "Attention" Revolutionized Natural Language Processing
 In 2017, a team of researchers from Google published a paper titled "Attention Is All You Need". This paper introduced the Transformer architecture, which provided the exact solution needed to break the bottleneck that held back the previous language models. The Transformers completely discarded the sequential, word by word processing of RNNs and LSTMs.
